@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantity increment or Decrement</title>
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+    <div class="product-card">
+        <img src="img/img2.jpg" class="chair-img"/>
+        <div class="card-body">
+        <h1  class="product-title"> Chair</h1>
+        <p class="product-description">
+            A chair is a type of seat, typically designed for one person and consisting of one or more legs,
+             a flat or slightly angled seat and a back-rest.
+        </p>
+        <p class="product-price"><del> 1000</del>  ₹ 800/- </p>
+
+        <p id="show-quantity">1 * 800</p>
+        <p id="show-total">Total: 800</p>
+        <div class="Quantity-btn-container">
+            <img src="./icon/substraction.png" class="btn-quantity" onclick="dec()"/>
+            <span class="Quantity-text" id="Quantity-text">1</span>
+            <img src="./icon/plus.png" class="btn-quantity" onclick="inc()"/>
+        </div>
+        <button type="button" class="btn-buy-now">
+            Buy Now
+        </button>
+        </div>
+        </div>
+
+
+
+
+
+        <div class="product-card">
+            <img src="img/img3.png" class="chair-img"/>
+            <div class="card-body">
+            <h1  class="product-title"> Chair</h1>
+            <p class="product-description">
+                A chair is a type of seat, typically designed for one person and consisting of one or more legs,
+                 a flat or slightly angled seat and a back-rest.            </p>
+            <p class="product-price"><del>1200</del>  ₹ 999/- </p>
+    
+            <p id="show-quantity1">1 *999</p>
+            <p id="show-total1">Total: 999</p>
+            <div class="Quantity-btn-container">
+                <img src="./icon/substraction.png" class="btn-quantity" onclick="dec1()"/>
+                <span class="Quantity-text" id="Quantity-text1">1</span>
+                <img src="./icon/plus.png" class="btn-quantity" onclick="inc1()"/>
+            </div>
+            <button type="button" class="btn-buy-now">
+                Buy Now
+            </button>
+            </div>
+            </div>
+        <script>
+
+                const Quantitytext =document.getElementById('Quantity-text');
+                const showquantity = document.getElementById("show-quantity")
+                const showtotal = document.getElementById("show-total")
+
+            function inc()
+            {
+                let Quantity = parseInt(Quantitytext.innerText);
+
+                if(Quantity<10)
+                 {
+
+                    Quantitytext.innerText =++Quantity;
+                }
+                else
+                {
+                    alert("you can't add more than 10 items")
+                }
+
+                setTotalAmount(Quantity)
+                }
+            function dec()
+            {
+                let Quantity = parseInt(Quantitytext.innerText);
+
+                if(Quantity >1)
+                {
+                    Quantitytext.innerText = --Quantity;
+                }
+                else
+                {
+                    alert("you can't add less that 1 item");
+                }
+                setTotalAmount(Quantity)
+
+            }
+            function setTotalAmount(Quantity){
+
+                showquantity.innerText = `${Quantity}` *800
+                showtotal.innerText =`Total: ${Quantity *800}`;
+            }
+
+            
+
+                const Quantitytext1 =document.getElementById('Quantity-text1');
+                const showquantity1 = document.getElementById("show-quantity1")
+                const showtotal1 = document.getElementById("show-total1")
+
+            function inc1()
+            {
+                let Quantity1 = parseInt(Quantitytext1.innerText);
+
+                if(Quantity1<10)
+                 {
+
+                    Quantitytext1.innerText =++Quantity1;
+                }
+                else
+                {
+                    alert("you can't add more than 10 items")
+                }
+
+                setTotalAmount1(Quantity1)
+                }
+            function dec1()
+            {
+                let Quantity1 = parseInt(Quantitytext1.innerText);
+
+                if(Quantity1>1)
+                {
+                    Quantitytext1.innerText = --Quantity1;
+                }
+                else
+                {
+                    alert("you can't add less that 1 item");
+                }
+                setTotalAmount1(Quantity1)
+
+            }
+            function setTotalAmount1(Quantity1){
+
+                showquantity1.innerText = `${Quantity1}` *999
+                showtotal1.innerText =`Total: ${Quantity1 *999}`;
+            }
+
+            function setTotalAmount1(Quantity1){
+
+                showquantity1.innerText = `${Quantity1}` *999
+                showtotal1.innerText =`Total: ${Quantity1 *999}`;
+            }
+
+
+        </script>
+</body>
+</html>
